@@ -6,7 +6,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from model import db, User  # Import từ model.py
 
 from f_sql import *
-from read_sensor import *
+# from read_sensor import *
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
@@ -184,8 +184,8 @@ if __name__ == '__main__':
         db.create_all()  # Tạo database nếu chưa có
 
     # Thread
-    thread_s = threading.Thread(target=thread_sensor, daemon=True)
-    thread_s.start()
+    # thread_s = threading.Thread(target=thread_sensor, daemon=True)
+    # thread_s.start()
 
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    # app.run(host="0.0.0.0", port=5000, debug=True)
 

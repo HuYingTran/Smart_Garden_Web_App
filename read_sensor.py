@@ -75,7 +75,7 @@ def thread_sensor():
         insert_table_sensor("co2", mq135_value)
         insert_table_sensor("light", light_status)
 
-        Chờ 60 giây trước khi đo lại
+        # Chờ 60 giây trước khi đo lại
         time.sleep(2.0)
 
 def controll_relay(object_t, status_t):
