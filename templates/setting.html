@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Home</title>
+</head>
+<body>
+    <div class="taskbar">
+        <div class="menu">
+            <a href="/home">Home</a>
+            <a href="/chart">Chart</a>
+            <a href="/setting" style="background:#555;">Setting</a>
+            <a href="/about">About</a>
+            <a href="/admin">Admin</a>
+        </div>
+    </div>
+
+    <header>
+        <h1>Smart Gardent</h1>
+    </header>
+
+    <main>
+        <h1>Setting value for automation</h1>
+        <div class="pannel" style="width: 100%;">
+
+            <table style="width: 100%; padding: 5%">
+                <thead style="color: rgb(255, 0, 242);">
+                    <tr>
+                        <th>Properties</th>
+                        <th>Setting</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Nhiệt Độ (°C)</th>
+                        <th><input type="text" id="s_temp" style="width: 90%; height: 100%;"></th>
+                    </tr>
+                    <tr>
+                        <th>Độ Ẩm (%)</th>
+                        <th><input type="text" id="s_humi" placeholder="Nhập giá trị độ ẩm" style="width: 90%; height: 100%;"></th>
+                    </tr>
+                    <tr>
+                        <th>Độ Ẩm Đất(%)</th>
+                        <th><input type="text" id="s_soil" placeholder="Nhập giá trị độ ẩm" style="width: 90%; height: 100%;"></th>
+                    </tr>
+                    <tr>
+                        <th>CO2 (ppm)</th>
+                        <th><input type="text" id="s_co2" placeholder="Nhập giá trị CO2" style="width: 90%; height: 100%;"></th>
+                    </tr>
+                    <tr>
+                        <th>Light (ppm)</th>
+                        <th><input type="text" id="s_light" placeholder="Nhập giá trị ánh sáng" style="width: 90%; height: 100%;"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="submit" style="height: 40px; width: 80px; background: #4CAF50; border-radius: 5px; color: #fff; border: none;" onclick="save_value_setting()">SAVE</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Trang Web Cơ Bản. Tất cả quyền được bảo vệ.</p>
+    </footer>
+
+    <script>
+        function save_value_setting() {
+            let divTemp = document.getElementById('s_temp');
+            let divHumi = document.getElementById('s_humi');
+            let divSoil = document.getElementById('s_soil');
+            let divCo2 = document.getElementById('s_co2');
+            let divLight = document.getElementById('s_light');
+
+            url = `api/set_value_setting?temp=${divTemp.value}&humi=${divHumi.value}&soil=${divSoil.value}&co2=${divCo2.value}`;
+            fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                alert("Cài đặt bộ giá trị mới thành công !");
+            })
+        }
+
+        function update_setting() {
+            fetch('api/get_setting')
+            .then(response => response.json())
+            .then(data => {
+                let divTemp = document.getElementById('s_temp');
+                let divHumi = document.getElementById('s_humi');
+                let divSoil = document.getElementById('s_soil');
+                let divCo2 = document.getElementById('s_co2');
+                let divLight = document.getElementById('s_light');
+
+                divTemp.placeholder = data.temp;
+                divHumi.placeholder = data.humi;
+                divSoil.placeholder = data.soil;
+                divCo2.placeholder = data.co2;
+                divLight.placeholder = data.light;
+            });
+        }
+        update_setting();
+    </script>
+</body>
+</html>

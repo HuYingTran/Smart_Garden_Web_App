@@ -1,0 +1,255 @@
+body {
+    display: flex;
+    flex-direction: column; /* Sắp xếp các phần tử con theo chiều dọc */
+    justify-content: center; /* Căn các phần tử con theo chiều dọc */
+    align-items: center; /* Căn các phần tử con theo chiều ngang */
+    text-align: center; /* Căn giữa văn bản trong các phần tử */
+}
+
+.taskbar {
+    width: 100%;
+    height: 50px; /* Chiều cao thanh taskbar */
+    background-color: #00aeff; /* Màu nền thanh taskbar */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.taskbar .logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+.taskbar .menu {
+    display: flex;
+    gap: 20px;
+}
+.taskbar .menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+.taskbar .menu a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    background: rgb(226, 255, 254);
+    border-radius: 20px;
+}
+
+.pannel {
+    border: 2px solid #00f7ff;
+    border-radius: 20px;
+}
+
+th {
+    padding-left: 20px;
+    width: 40%;
+    height: 40px;
+    border: 2px solid #0066ff;
+    text-align: left;
+}
+
+
+.switch-container {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 50px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Thiết kế các chữ "ON" và "OFF" */
+.switch-text {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.on-text {
+    color: green;
+}
+
+.off-text {
+    color: red;
+}
+
+.admin-container {
+    width: 30%;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h2 {
+    text-align: center;
+    color: #333;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    font-size: 16px;
+    color: #333;
+}
+.form-group input {
+    width: 95%;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.form-group button:hover {
+    background-color: #45a049;
+}
+.logout-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #f44336;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.logout-button:hover {
+    background-color: #e53935;
+}
+
+
+.about-container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+h1, h2, h3 {
+    color: #333;
+    text-align: center;
+}
+.content {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.content p {
+    font-size: 18px;
+    color: #555;
+}
+.features {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+}
+.feature {
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.feature h3 {
+    color: #4CAF50;
+}
+.feature p {
+    color: #777;
+}
+.image-container {
+    text-align: center;
+    margin-top: 30px;
+}
+.image-container img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+.btn-status {
+    padding-left: 20px;
+    width: 100%;
+    height: 45px;
+    border: 2px solid #0066ff;
+    text-align: left;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btn-status:hover {
+    background-color: #00ffea;
+}
+
+.on {
+    background: #00ff15;
+}
+
+.off {
+    background: #ff3300;
+}
