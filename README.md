@@ -5,6 +5,8 @@ BackEnd Web was written by Python Flask
 FontEnd Web
 ![image](https://github.com/user-attachments/assets/b858d5ab-3ae6-4264-8e7a-3b5d3c8ea26f)
 
+![Uploading image.png…]()
+
 ## Hardware
 
 Device Name |Numbers|
@@ -18,3 +20,8 @@ MQ135|1|
 Realy 5V|4|
 
 ![image](https://github.com/user-attachments/assets/6c0e646d-034a-49b7-b6f0-f24ffa0636e8)
+
+
+# Algorithm diagram
+
+![image](https://github.com/user-attachments/assets/39b5e00a-aeee-486e-9b92-60c35230667a)
